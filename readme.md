@@ -57,3 +57,9 @@ Angular thinks in components. Decouple components as much as possible. Keep spli
 
 ### 2.3 Generate PostCreateComponent
 '@angular/core', export class, @Component
+
+### 5.4 Adding angular material
+ng add @angular/material
+Installs the package and also configs in project.
+npm install @angular/material - Only installs
+https://material.angular.io/
