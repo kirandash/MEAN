@@ -55,3 +55,5 @@ Angular Frontend - NodeJS + Express Backend - Handling data with MongoDB - Enhan
 ### 2.2 Dividing in components
 Angular thinks in components. Decouple components as much as possible. Keep splitting.
 
+### 2.3 Generate PostCreateComponent
+'@angular/core', export class, @Component
