@@ -81,3 +81,10 @@ export interface Post {
 ### 2.9 Adding Template Driven Form
 (submit)="saveData(postForm)" #postForm="ngForm"
 #title="ngModel"
+
+### 2.10 Use service instead of input/output
+If @Injectable({ providedIn: 'root' }) added to service class then no need of providing it in app.module file
+Listen to updates with Subject, Subscription
+postsUpdated = new Subject<Post[]>();
+this.postsUpdated.next([...this.posts]);
+return this.postsUpdated.asObservable();

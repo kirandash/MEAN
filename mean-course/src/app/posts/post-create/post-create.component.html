@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <!--<textarea rows="10" name="enteredValue"></textarea>-->
-      <textarea rows="10" name="value" ngModel minlength="10" maxlength="100" required #content="ngModel"></textarea>
+      <textarea rows="10" name="content" ngModel minlength="10" maxlength="100" required #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter atleast 10 characters</mat-error>
     </div>
     <button mat-raised-button color="accent" type="submit">Save</button>
