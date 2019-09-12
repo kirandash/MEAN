@@ -95,3 +95,23 @@ return this.postsUpdated.asObservable();
 
 ### 2.12 Reset form
 form.resetForm();
+
+## 3. NodeJS Setup
+### 3.1 Node - Angular connection
+Two way of serving app:
+1. Node App serves Angular Server (Node Express to handle incoming requests and - for "/" return SPA while for other routes return APIs)
+2. Different servers for Angular and node (Node Express to handle incoming requests and - Angular SPA served from separate static host)
+
+### 3.2 REST:
+Representational State Transfer
+1. RESTful APIs are Stateless backends
+2. Independent of client
+3. Communicates via following features:
+3.1 Routes (e.g. /users, /posts, /products)
+3.2 HTTP methods (GET, PUT, POST, DELETE)
+3.3 req, res
+3.4 Data: JSON format
+
+### 3.3 Node server setup
+http.createServer()
+node server.js
