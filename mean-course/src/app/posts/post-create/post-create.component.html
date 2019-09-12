@@ -1,13 +1,13 @@
 <mat-card class="example-card">
   <form (submit)="saveData(postForm)" #postForm="ngForm">
     <div class="row">
-      <!--<input rows="10" [(ngModel)]="enteredTitle"/>-->
-      <input rows="10" name="title" ngModel required maxlength="10" #title="ngModel"/>
+      <!--<input [(ngModel)]="enteredTitle"/>-->
+      <input placeholder="Title" name="title" ngModel required maxlength="10" #title="ngModel"/>
       <mat-error *ngIf="title.invalid">Please enter Title</mat-error>
     </div>
     <div class="row">
       <!--<textarea rows="10" name="enteredValue"></textarea>-->
-      <textarea rows="10" name="content" ngModel minlength="10" maxlength="100" required #content="ngModel"></textarea>
+      <textarea placeholder="Description" rows="10" name="content" ngModel minlength="10" maxlength="100" required #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter atleast 10 characters</mat-error>
     </div>
     <button mat-raised-button color="accent" type="submit">Save</button>

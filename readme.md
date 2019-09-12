@@ -88,3 +88,10 @@ Listen to updates with Subject, Subscription
 postsUpdated = new Subject<Post[]>();
 this.postsUpdated.next([...this.posts]);
 return this.postsUpdated.asObservable();
+
+### 2.11 Observable, Observers and Subscriptions
+1. Observer (next(), error(), complete()) ---> Observable()
+2. Normal observable is kind of passive, we will have to wait for something to happen in order to listen. But Subject is more active and manually we can call next.
+
+### 2.12 Reset form
+form.resetForm();
