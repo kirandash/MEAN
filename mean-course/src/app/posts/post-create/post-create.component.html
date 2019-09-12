@@ -1,1 +1,7 @@
-<p>This template is used to create post.</p>
+<mat-card class="example-card">
+  <div class="row">
+    <textarea rows="10" [(ngModel)]="enteredValue"></textarea>
+  </div>
+  <button mat-raised-button color="accent" (click)="saveData()">Save</button>
+</mat-card>
+<p>Result: {{savedText}}</p>
