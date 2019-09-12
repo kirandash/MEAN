@@ -115,3 +115,6 @@ Representational State Transfer
 ### 3.3 Node server setup
 http.createServer()
 node server.js
+
+### 3.4 Express setup
+mean-course --> npm install --save express
