@@ -1,5 +1,8 @@
 <mat-card class="example-card">
   <div class="row">
+    <input rows="10" [(ngModel)]="enteredTitle"/>
+  </div>
+  <div class="row">
     <textarea rows="10" [(ngModel)]="enteredValue"></textarea>
   </div>
   <button mat-raised-button color="accent" (click)="saveData()">Save</button>
