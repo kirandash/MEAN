@@ -65,3 +65,6 @@ npm install @angular/material - Only installs
 https://material.angular.io/
 
 ### 5.5 Adding a simple form and a header
+
+### 5.6 Creating Post List component
+*ngFor, *ngIf and :host (current component selector)

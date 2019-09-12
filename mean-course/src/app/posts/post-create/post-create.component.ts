@@ -9,10 +9,10 @@ import { Component } from '@angular/core';
 export class PostCreateComponent {
   enteredValue: string;
   savedText: string;
-  constructor(){
+  constructor() {
 
   }
-  saveData(){
+  saveData() {
     this.savedText = this.enteredValue;
   }
 }
