@@ -70,3 +70,10 @@ https://material.angular.io/
 *ngFor, *ngIf and :host (current component selector)
 
 ### 2.7 @Input and @Output, EventEmitter
+
+### 2.8 Creating a Post model with interface
+export interface Post {
+  title: string;
+  content: string;
+}
+: Post[]

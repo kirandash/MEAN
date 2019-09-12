@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from './posts/post.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MEAN Application';
-  storedPosts = [];
+  storedPosts: Post[] = [];
 
   onPostCreation(post) {
     this.storedPosts.push(post);
