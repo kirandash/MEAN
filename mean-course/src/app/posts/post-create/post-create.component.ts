@@ -8,14 +8,17 @@ import { Post } from '../post.interface';
 })
 
 export class PostCreateComponent {
-  enteredTitle: string;
-  enteredValue: string;
+  // enteredTitle: string;
+  // enteredValue: string;
   @Output() createdPost = new EventEmitter<Post>();
   constructor() {
 
   }
-  saveData() {
-    const post = {title: this.enteredTitle, content: this.enteredValue};
+  saveData(form) {
+    if (form.invalid) {
+      return;
+    }
+    const post = {title: form.value.title, content: form.value.content};
     this.createdPost.emit(post);
   }
 }

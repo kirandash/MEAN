@@ -77,3 +77,7 @@ export interface Post {
   content: string;
 }
 : Post[]
+
+### 2.9 Adding Template Driven Form
+(submit)="saveData(postForm)" #postForm="ngForm"
+#title="ngModel"
