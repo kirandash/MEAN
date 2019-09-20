@@ -118,3 +118,12 @@ node server.js
 
 ### 3.4 Express setup
 mean-course --> npm install --save express
+
+### 3.5 Improving server.js code
+1. normalizedPort, onError, onListening
+2. server.on("error", onError);
+server.on("listening", onListening);
+3. Install nodemon for better server execution instead of stopping and starting server everytime with node. since nodemon watches for changes in nodejs code. cd mean-course. 
+4. npm install --save-dev nodemon
+5. start:server
+6. const debug = require("debug")("node-angular");
