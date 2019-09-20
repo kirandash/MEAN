@@ -127,3 +127,7 @@ server.on("listening", onListening);
 4. npm install --save-dev nodemon
 5. start:server
 6. const debug = require("debug")("node-angular");
+
+### 3.6 Fetching initial posts
+1. app.use('/api/posts', (req, res, next) => {...});
+2. res.status(200).json({ json object });
