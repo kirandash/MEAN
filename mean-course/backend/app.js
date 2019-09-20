@@ -6,6 +6,14 @@ const app = express();
   next(); // If no response is being sent then use next in a middleware so that next code blocks can be executed otherwise it will timeout
 });*/
 
+// Allowing CORS and headers for responses
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+  next(); // next, since we do want to go to next codes after setting the header
+});
+
 // Creating a route for fetching posts
 app.use('/api/posts', (req, res, next) => {
   const posts = [

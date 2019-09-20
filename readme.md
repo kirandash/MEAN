@@ -131,3 +131,8 @@ server.on("listening", onListening);
 ### 3.6 Fetching initial posts
 1. app.use('/api/posts', (req, res, next) => {...});
 2. res.status(200).json({ json object });
+
+### 3.7 Allowing CORS, Headers and Methods via setHeader()
+1. res.setHeader("Access-Control-Allow-Origin", "*");
+2. res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+3. res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
