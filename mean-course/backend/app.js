@@ -1,5 +1,9 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 /*app.use((req, res, next) => {
   console.log('Middleware one!');
@@ -15,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 // Creating a route for fetching posts
-app.use('/api/posts', (req, res, next) => {
+app.get('/api/posts', (req, res, next) => {
   const posts = [
     {
       id: 'faaa1234567',
@@ -33,6 +37,13 @@ app.use('/api/posts', (req, res, next) => {
     message: 'Post read successfully',
     posts: posts
   }); // sending a json response to client
+});
+
+// Creating post request
+app.post('/api/post', (req, res, next) => {
+  const posts = req.body; // This requires body parser
+  console.log(posts);
+  res.json({ message: 'Post created successfully!' });
 });
 
 app.use((req, res, next) => {

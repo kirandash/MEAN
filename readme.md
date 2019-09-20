@@ -139,3 +139,8 @@ server.on("listening", onListening);
 
 ### 3.8 Angular HttpClientModule for get call
 this.http.get
+
+### 3.9 Node - post data and Angular
+1. Install body-parser: npm install --save body-parser
+2. app.post('/api/post', (req, res, next)
+3. this.http.post('http://localhost:3000/api/post', post)
