@@ -136,3 +136,6 @@ server.on("listening", onListening);
 1. res.setHeader("Access-Control-Allow-Origin", "*");
 2. res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 3. res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+
+### 3.8 Angular HttpClientModule for get call
+this.http.get
