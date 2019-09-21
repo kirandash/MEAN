@@ -213,7 +213,18 @@ change password and database name which is set as test
 4. Note: MongoCloud free version does not provide much info like looking at the database etc. So Download MongoShell and run the below command from bin folder:
 mongo "mongodb+srv://cluster0-hqaum.mongodb.net/test" --username kirandash
 (Replace test with node-angular)
+ktv2W3li4UHbPOjG
 5. use node-angular to switch to node-angular db
 6. help cmd to see all cmds 
 7. show collections
 8. db.posts.find()
+
+### 4.10 Fetching data from DB
+1. https://mongoosejs.com/docs/queries.html
+2. Post.find().then(document => {
+    res.status(200).json({
+      status: 'Success',
+      message: 'Post read successfully',
+      posts: document
+    }); // sending a json response to client
+  });

@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 // Creating a route for fetching posts
 app.get('/api/posts', (req, res, next) => {
-  const posts = [
+  /*const posts = [
     {
       id: 'faaa1234567',
       title: 'First Server-side post',
@@ -40,12 +40,14 @@ app.get('/api/posts', (req, res, next) => {
       title: 'Second Server-side post',
       content: 'This is second post coming from the server.'
     }
-  ];
-  res.status(200).json({
-    status: 'Success',
-    message: 'Post read successfully',
-    posts: posts
-  }); // sending a json response to client
+  ];*/
+  Post.find().then(document => {
+    res.status(200).json({
+      status: 'Success',
+      message: 'Post read successfully',
+      posts: document
+    }); // sending a json response to client
+  });
 });
 
 // Creating post request
