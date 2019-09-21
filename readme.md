@@ -196,3 +196,11 @@ const posts = new Post({
   title: req.body.title,
   content: req.body.content
 });
+
+### 4.8 Connecting our Node Express app to MongoDB
+1. Go to cloud.mongodb.com
+2. Clusters --> Click on "Connect"
+3. Connect your application
+4. Connect string only --> copy (srv address)
+mongodb+srv://kirandash:<password>@cluster0-hqaum.mongodb.net/test?retryWrites=true&w=majority
+mongoose.connect("...").then().catch();

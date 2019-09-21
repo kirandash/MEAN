@@ -1,11 +1,18 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const Post = require("./models/post");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+mongoose.connect("mongodb+srv://kirandash:<password>@cluster0-hqaum.mongodb.net/test?retryWrites=true&w=majority").then(() => {
+  console.log('Connected to Database!');
+}).catch(() => {
+  console.log('Error in connection');
+});
 
 /*app.use((req, res, next) => {
   console.log('Middleware one!');
