@@ -182,3 +182,9 @@ Possible but highly insecure. Since secure authentication is not possible. In cl
 https://docs.mongodb.com/manual/tutorial/getting-started/
 But we will use a package mongoose. It makes accessing mongodb pretty easy. Since it uses Schema which defines the data structure. MongoDb does not have schema. Thus mongoose is helpful in connecting to MongoDB.
 2. npm install --save mongoose
+
+### 4.6 Creating Mongoose Schemas and model
+1. https://mongoosejs.com/docs/guide.html, Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+https://mongoosejs.com/docs/schematypes.html
+2. To use our schema definition, we need to convert our blogSchema into a Model we can work with.
+3. Export model after creating schema and model
