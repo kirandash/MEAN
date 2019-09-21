@@ -62,6 +62,15 @@ app.post('/api/post', (req, res, next) => {
   res.status(201).json({ message: 'Post created successfully!' }); // 201 status = success with update
 });
 
+// Delete Request
+app.delete('/api/post/:id', (req, res, next) => {
+  Post.deleteOne({ _id: req.params.id }).then(result => {
+    console.log(result);
+    console.log('Deleted in backend' + req.params.id);
+    res.status(200).json({ status: 'success', message: 'Post deleted successfully' });
+  });
+});
+
 app.use((req, res, next) => {
   console.log('Middleware Two!'); // Note that the log will come twice since favicon is also being loaded
   res.send('Express App Started!'); // No need of next since send is being used

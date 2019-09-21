@@ -231,3 +231,12 @@ ktv2W3li4UHbPOjG
 
 ### 4.11 Transforming response data from mongo in angular _id map to id
 1. using pipe and map operators
+
+### 4.12 Deleting Documents
+app.delete('/api/post/:id', (req, res, next) => {
+  Post.deleteOne({ _id: req.params.id }).then(result => {
+    console.log(result);
+    console.log('Deleted in backend' + req.params.id);
+    res.status(200).json({ status: 'success', message: 'Post deleted successfully' });
+  });
+});
