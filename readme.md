@@ -257,3 +257,11 @@ post.save().then(result => {
 2. imports, exports
 3. RouterModule.forRoot(appRoutes)
 4. router-outlet, routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+
+### 5.2 Routing Tips
+1. If both Angular and NodeJS apps are deployed to same server then we must make sure that both client and server does not have same routing paths otherwise files won't be rendered properly by server.
+
+### 5.3 Edit Post
+1. this.route.paramMap.subscribe
+2. this.postId = param.get('postId');
+3. [routerLink]="['/edit', post.id]"

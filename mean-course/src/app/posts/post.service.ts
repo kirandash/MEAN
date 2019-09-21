@@ -44,6 +44,10 @@ export class PostService {
     });
   }
 
+  getPost(postId) {
+    return {...this.posts.find(post => post.id === postId)};
+  }
+
   deletePost(postId) {
     this.http.delete('http://localhost:3000/api/post/' + postId).subscribe((response: {status: string, message: string}) => {
       if (response.status === 'success') {
