@@ -228,3 +228,6 @@ ktv2W3li4UHbPOjG
       posts: document
     }); // sending a json response to client
   });
+
+### 4.11 Transforming response data from mongo in angular _id map to id
+1. using pipe and map operators

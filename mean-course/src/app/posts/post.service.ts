@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Post } from './post.interface';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class PostService {
@@ -11,10 +12,21 @@ export class PostService {
 
   }
   getPosts() {
-    this.http.get('http://localhost:3000/api/posts').subscribe((response: { status: 'string', message: 'string', posts: Post[] }) => {
-      this.posts = response.posts; // get the posts
-      this.postsUpdated.next([...this.posts]); // update the posts observable
-    });
+    this.http
+      .get<{status: 'string', message: 'string', posts: any}>('http://localhost:3000/api/posts')
+      .pipe(map((postData) =>  {
+        return postData.posts.map(post => {
+          return {
+            title: post.title,
+            content: post.content,
+            id: post._id
+          }; // mapping _id to id with map
+        });
+      }))
+      .subscribe((modifiedPosts: Post[]) => {
+        this.posts = modifiedPosts; // get the posts
+        this.postsUpdated.next([...this.posts]); // update the posts observable
+      });
     // return this.posts; // This will return the original array. Always work with clones
     // return [...this.posts];
   }
