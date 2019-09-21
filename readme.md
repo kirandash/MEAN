@@ -250,3 +250,10 @@ this.postsUpdated.next([...this.posts]);
 post.save().then(result => {
   res.status(201).json({ postId: result._id});
 });
+
+## 5. Enhancing the app
+### 5.1 Creating Routing Module
+1. RouterModule, Routes
+2. imports, exports
+3. RouterModule.forRoot(appRoutes)
+4. router-outlet, routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
