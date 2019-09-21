@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
+const Post = require("./models/post");
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -41,7 +43,11 @@ app.get('/api/posts', (req, res, next) => {
 
 // Creating post request
 app.post('/api/post', (req, res, next) => {
-  const posts = req.body; // This requires body parser
+  // const posts = req.body; // This requires body parser
+  const posts = new Post({
+    title: req.body.title,
+    content: req.body.content
+  });
   console.log(posts);
   res.json({ message: 'Post created successfully!' });
 });

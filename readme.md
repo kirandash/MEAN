@@ -125,7 +125,7 @@ mean-course --> npm install --save express
 server.on("listening", onListening);
 3. Install nodemon for better server execution instead of stopping and starting server everytime with node. since nodemon watches for changes in nodejs code. cd mean-course. 
 4. npm install --save-dev nodemon
-5. start:server
+5. start:server: npm run start:server
 6. const debug = require("debug")("node-angular");
 
 ### 3.6 Fetching initial posts
@@ -188,3 +188,11 @@ But we will use a package mongoose. It makes accessing mongodb pretty easy. Sinc
 https://mongoosejs.com/docs/schematypes.html
 2. To use our schema definition, we need to convert our blogSchema into a Model we can work with.
 3. Export model after creating schema and model
+
+### 4.7 Creating a POST instance
+1. Use post model from mongoose to create a post 
+2. Modify post to be follow Post model instead of just req.body
+const posts = new Post({
+  title: req.body.title,
+  content: req.body.content
+});
