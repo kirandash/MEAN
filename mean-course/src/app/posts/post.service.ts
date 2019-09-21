@@ -13,7 +13,7 @@ export class PostService {
   }
   getPosts() {
     this.http
-      .get<{status: 'string', message: 'string', posts: any}>('http://localhost:3000/api/posts')
+      .get<{status: string, message: string, posts: any}>('http://localhost:3000/api/posts')
       .pipe(map((postData) =>  {
         return postData.posts.map(post => {
           return {
@@ -36,16 +36,21 @@ export class PostService {
   }
 
   addPost(postTitle: string, value: string) {
-    const post = {title: postTitle, content: value};
+    const post = {id: null, title: postTitle, content: value};
     this.http.post('http://localhost:3000/api/post', post).subscribe((response) => {
       this.posts.push(post);
-      this.postsUpdated.next([...this.posts]);
+      this.getPosts(); // Since we do not have the id while adding post
     });
   }
 
   deletePost(postId) {
-    this.http.delete('http://localhost:3000/api/post/' + postId).subscribe((response: {status: 'string', message: 'string'}) => {
-      console.log(response.message);
+    this.http.delete('http://localhost:3000/api/post/' + postId).subscribe((response: {status: string, message: string}) => {
+      if (response.status === 'success') {
+        console.log(response.message);
+        const updatedPosts = this.posts.filter(post => post.id !== postId);
+        this.posts = updatedPosts; // Update the main posts array
+        this.postsUpdated.next([...this.posts]); // send the latest post to observable
+      }
     });
   }
 }

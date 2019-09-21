@@ -240,3 +240,8 @@ app.delete('/api/post/:id', (req, res, next) => {
     res.status(200).json({ status: 'success', message: 'Post deleted successfully' });
   });
 });
+
+### 4.13 Updating frontend after deleting
+const updatedPosts = this.posts.filter(post => post.id !== postId);
+this.posts = updatedPosts; // Update the main posts array
+this.postsUpdated.next([...this.posts]);
