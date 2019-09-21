@@ -8,3 +8,4 @@ const postSchema = mongoose.Schema({
 
 module.exports = mongoose.model('Post', postSchema); // Creating a Post model with schema postSchema
 // model fn returns a constructor and thus allows us to create a new Object in app.js file
+// it will be saved in collection as posts

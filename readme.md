@@ -204,3 +204,16 @@ const posts = new Post({
 4. Connect string only --> copy (srv address)
 mongodb+srv://kirandash:<password>@cluster0-hqaum.mongodb.net/test?retryWrites=true&w=majority
 mongoose.connect("...").then().catch();
+
+### 4.9 Storing data in DB
+1. in srv url:
+change password and database name which is set as test
+2. post.save()
+3. Collection names = plural of model name (Post) = posts
+4. Note: MongoCloud free version does not provide much info like looking at the database etc. So Download MongoShell and run the below command from bin folder:
+mongo "mongodb+srv://cluster0-hqaum.mongodb.net/test" --username kirandash
+(Replace test with node-angular)
+5. use node-angular to switch to node-angular db
+6. help cmd to see all cmds 
+7. show collections
+8. db.posts.find()

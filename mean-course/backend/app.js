@@ -8,7 +8,7 @@ const Post = require("./models/post");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-mongoose.connect("mongodb+srv://kirandash:<password>@cluster0-hqaum.mongodb.net/test?retryWrites=true&w=majority").then(() => {
+mongoose.connect("mongodb+srv://kirandash:ktv2W3li4UHbPOjG@cluster0-hqaum.mongodb.net/node-angular?retryWrites=true&w=majority").then(() => {
   console.log('Connected to Database!');
 }).catch(() => {
   console.log('Error in connection');
@@ -51,12 +51,13 @@ app.get('/api/posts', (req, res, next) => {
 // Creating post request
 app.post('/api/post', (req, res, next) => {
   // const posts = req.body; // This requires body parser
-  const posts = new Post({
+  const post = new Post({
     title: req.body.title,
     content: req.body.content
   });
-  console.log(posts);
-  res.json({ message: 'Post created successfully!' });
+  console.log(post);
+  post.save(); // To save posts into database
+  res.status(201).json({ message: 'Post created successfully!' }); // 201 status = success with update
 });
 
 app.use((req, res, next) => {
