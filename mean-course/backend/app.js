@@ -58,9 +58,10 @@ app.post('/api/post', (req, res, next) => {
     content: req.body.content
   });
   console.log(post);
-  console.log('response id ' + post._id);
-  post.save(); // To save posts into database
-  res.status(201).json({ message: 'Post created successfully!', postId: post._id}); // 201 status = success with update
+  post.save().then(result => {
+    console.log(result); // Will hold the result after pushing post to db
+    res.status(201).json({ message: 'Post created successfully!', postId: result._id}); // 201 status = success with update
+  }); // To save posts into database
 });
 
 // Delete Request

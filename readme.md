@@ -245,3 +245,8 @@ app.delete('/api/post/:id', (req, res, next) => {
 const updatedPosts = this.posts.filter(post => post.id !== postId);
 this.posts = updatedPosts; // Update the main posts array
 this.postsUpdated.next([...this.posts]);
+
+### 4.14 Adding Posts with Id
+post.save().then(result => {
+  res.status(201).json({ postId: result._id});
+});
