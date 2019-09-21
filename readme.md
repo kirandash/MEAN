@@ -144,3 +144,41 @@ this.http.get
 1. Install body-parser: npm install --save body-parser
 2. app.post('/api/post', (req, res, next)
 3. this.http.post('http://localhost:3000/api/post', post)
+
+## 4. MongoDB
+### 4.1 Intro
+1. A noSQL Database which stores "Documents" in "Collections" (instead of "Records" in "Tables" as in SQL)
+2. Store application data (users, products, ...)
+3. Enforces no Data schema or relations
+4. Easily connected to node/express (Not to Angular)
+5. A powerful database which can easily be integrated into a Node/express environement.
+
+### 4.2 NoSQL vs SQL
+NoSQL:
+1. MongoDB, CouchDB
+2. Enforces no Data schema
+3. Less focused on relations
+4. Independent documents
+5. Great for: Logs, chats, text messages etc.
+SQL: 
+1. MySQL, MS SQL
+2. Enforces a strict Data Schema
+3. Relations are a core feature
+4. Records are realted
+5. Great for: Shopping Carts, Contacts, Networks
+
+### 4.3 Connecting Angular to DB?
+Possible but highly insecure. Since secure authentication is not possible. In client side, credentials for db should not be exposed.
+
+### 4.4 Set up MongoDB
+1. https://cloud.mongodb.com
+2. Cloud Atlas
+3. Build your first cluster - AWS, N.Virginia, Cluster Tier - MO Sandbox
+4. Create your first Database user - Database Access - Add new user: kirandash07@gmail.com, ktv2W3li4UHbPOjG, previlige - read and write to any database.
+5. Whitelist your ip address - Network Access -> Add IP Address -> Add current IP address 138.75.84.195 (Note that it will change during deployment)
+
+### 4.5 Adding Mongoose
+1. Can connect to MongoDB via NodeJS
+https://docs.mongodb.com/manual/tutorial/getting-started/
+But we will use a package mongoose. It makes accessing mongodb pretty easy. Since it uses Schema which defines the data structure. MongoDb does not have schema. Thus mongoose is helpful in connecting to MongoDB.
+2. npm install --save mongoose
